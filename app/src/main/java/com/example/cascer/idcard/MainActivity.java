@@ -1,6 +1,7 @@
 package com.example.cascer.idcard;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().hide();
 
         tvName = findViewById(R.id.tv_nama);
         tvEmail = findViewById(R.id.tv_email);
@@ -51,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void edit(View view) {
         Intent intent = new Intent(this, EditIdCardActivity.class);
-        intent.putExtra("name", String.valueOf(tvName.getText()));
-        intent.putExtra("email", String.valueOf(tvEmail.getText()));
-        intent.putExtra("phone", String.valueOf(tvPhone.getText()));
-        intent.putExtra("bio", String.valueOf(tvBio.getText()));
+        intent.putExtra("name", tvName.getText());
+        intent.putExtra("email", tvEmail.getText());
+        intent.putExtra("phone", tvPhone.getText());
+        intent.putExtra("bio", tvBio.getText());
         startActivity(intent);
     }
 }

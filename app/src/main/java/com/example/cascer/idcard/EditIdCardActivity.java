@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toolbar;
+import android.widget.Toast;
 
 public class EditIdCardActivity extends AppCompatActivity {
 
@@ -17,6 +17,7 @@ public class EditIdCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_id_card);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Edit");
 
         etName = findViewById(R.id.et_name);
         etEmail = findViewById(R.id.et_email);
@@ -73,5 +74,7 @@ public class EditIdCardActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
+
+        Toast.makeText(this, "Save Berhasil", Toast.LENGTH_LONG).show();
     }
 }
